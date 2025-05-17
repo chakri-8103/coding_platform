@@ -16,7 +16,7 @@
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
@@ -82,11 +82,28 @@
                 <div id="seconds" class="time-value">0</div>
                 <div class="time-label">Seconds</div>
             </div>
+
+            <div class="time-box">
+                <div id="milliseconds" class="time-value">0</div>
+                <div class="time-label">Milliseconds</div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <h3 class="text-warning">🚀 Coding Platform Launching Soon</h3>
+            <p class="text-secondary">Stay tuned for the latest updates and features!</p>
+
+            <p class="text-secondary">Please <a href="index.html"
+                    class="text-decoration-underline text-danger fw-bold">click here</a> to read all theinstructions
+                before proceeding.</p>
+
         </div>
 
         <div id="result" class="mt-5">
             <h3 class="text-success">🎉 Countdown Complete!</h3>
             <p class="text-info fs-3">📢 Updated Coding Platform Soon...</p>
+             <p class="text-secondary">Please <a href="index.html"
+                    class="text-decoration-underline text-danger fw-bold">click here</a> to read all theinstructions
+                before proceeding.</p>
 
 
         </div>
@@ -106,7 +123,7 @@
         });
 
 
-        
+
         const targetDateTime = new Date("2025-06-01T09:30:00");
 
         function updateCountdown() {
@@ -118,6 +135,7 @@
                 document.getElementById("hours").innerText = 0;
                 document.getElementById("minutes").innerText = 0;
                 document.getElementById("seconds").innerText = 0;
+                document.getElementById("milliseconds").innerText = 0;
                 document.getElementById("result").style.display = "block";
 
                 // Redirect to new.html after 2 seconds
@@ -134,13 +152,15 @@
             const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
             const minutes = Math.floor((totalSeconds % 3600) / 60);
             const seconds = totalSeconds % 60;
+            const milliseconds = Math.floor((timeDiff % 1000) / 10);
 
             document.getElementById("days").innerText = days;
             document.getElementById("hours").innerText = hours;
             document.getElementById("minutes").innerText = minutes;
             document.getElementById("seconds").innerText = seconds;
+            document.getElementById("milliseconds").innerText = milliseconds;
 
-            setTimeout(updateCountdown, 1000);
+            setTimeout(updateCountdown, 10);
         }
 
         updateCountdown();
