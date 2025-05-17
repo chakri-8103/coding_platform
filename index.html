@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coding Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    .letter-hover:hover {
+        transform: scale(1.25);
+        transition: transform 0.2s ease;
+    }
+
+    .footer {
+        background-color: #212529;
+    }
+
+    /* Language button colors */
+    .btn-c {
+        color: #00427E;
+        border-color: #00427E;
+    }
+
+    .btn-c:hover {
+        background-color: #00427E;
+        color: white;
+    }
+
+    .btn-cpp {
+        color: #9C033A;
+        border-color: #9C033A;
+    }
+
+    .btn-cpp:hover {
+        background-color: #9C033A;
+        color: white;
+    }
+
+    .btn-python {
+        color: #3572A5;
+        border-color: #3572A5;
+    }
+
+    .btn-python:hover {
+        background-color: #3572A5;
+        color: white;
+    }
+
+    .btn-java {
+        color: #B07219;
+        border-color: #B07219;
+    }
+
+    .btn-java:hover {
+        background-color: #B07219;
+        color: white;
+    }
+
+    .btn-php {
+        color: #4F5D95;
+        border-color: #4F5D95;
+    }
+
+    .btn-php:hover {
+        background-color: #4F5D95;
+        color: white;
+    }
+
+    .btn-kotlin {
+        color: #A97BFF;
+        border-color: #A97BFF;
+    }
+
+    .btn-kotlin:hover {
+        background-color: #A97BFF;
+        color: white;
+    }
+
+    .btn-go {
+        color: #00ADD8;
+        border-color: #00ADD8;
+    }
+
+    .btn-go:hover {
+        background-color: #00ADD8;
+        color: white;
+    }
+
+    /* Practice link styling */
+    .practice-link {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        color: white !important;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .practice-link:hover {
+        background: linear-gradient(45deg, #2575fc, #6a11cb);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Improved mobile responsiveness */
+    @media (max-width: 768px) {
+        .card {
+            margin-bottom: 1rem;
+        }
+
+        .language-options .btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .cdavin-logo {
+            font-size: 2.5rem;
+        }
+    }
+
+    /* Sticky premium button */
+    .sticky-premium {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    @media (max-width: 768px) {
+        .sticky-premium {
+            top: 5px;
+            right: 5px;
+        }
+    }
+
+    /* Instructions styling */
+    .instruction-card {
+        border-left: 4px solid #0d6efd;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        background-color: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .bg-light-subtle {
+        background-color: #f8f9fa;
+    }
+
+    .custom-font {
+        font-family: 'Georgia', serif;
+    }
+</style>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Sticky Premium Button -->
+    <div class="sticky-premium p-3 w-20">
+        <a href="pre.html">
+            <button class="btn btn-success btn-lg">Get Premium</button>
+        </a>
+    </div>
+    <!-- CDAVIN Logo Component -->
+    <div class="container text-center my-4" id="cdavinLogo">
+        <div class="text-center">
+            <div class="container text-center my-4" id="cdavinLogo">
+                <div class="fw-bold fs-4 text-muted">
+                    Coding Platform
+                </div>
+            </div>
+            <div class="mt-3 text-muted">
+                <small>Powered by <strong>CDAVIN</strong> — Master coding through hands-on learning and
+                    practice.</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions Container -->
+    <div id="instructionsContainer" class="container mt-2 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="card shadow rounded-4">
+                    <div class="card-body p-4">
+                        <h4 class="text-center mb-4 fw-bold text-danger custom-font">
+                            How to Use the Coding Platform
+                        </h4>
+
+
+                        <div
+                            class="mb-3 p-3 rounded-3 d-flex align-items-start border-start border-4 border-muted bg-light-subtle">
+                            <div class="step-number me-3 fs-4 fw-bold">1</div>
+                            <div>
+                                <h5 class="fw-semibold text-muted">Select a Question</h5>
+                                <p class="mb-0 text-secondary">Browse through the available coding questions and choose
+                                    one that interests you.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mb-3 p-3 rounded-3 d-flex align-items-start border-start border-4 border-success bg-light-subtle">
+                            <div class="step-number me-3 fs-4 fw-bold ">2</div>
+                            <div>
+                                <h5 class="fw-semibold  text-success">Choose Your Language</h5>
+                                <p class="mb-0 text-secondary">Pick your preferred programming language from the
+                                    available options.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mb-3 p-3 rounded-3 d-flex align-items-start border-start border-4 border-warning bg-light-subtle">
+                            <div class="step-number me-3 fs-4 fw-bold">3</div>
+                            <div>
+                                <h5 class="fw-semibold  text-warning">View the Solution</h5>
+                                <p class="mb-0 text-secondary">Study the displayed solution code in your selected
+                                    language.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mb-3 p-3 rounded-3 d-flex align-items-start border-start border-4 border-info bg-light-subtle">
+                            <div class="step-number me-3 fs-4 fw-bold ">4</div>
+                            <div>
+                                <h5 class="fw-semibold  text-info">Practice Online</h5>
+                                <p class="mb-0 text-secondary">Use the given link to try the solution in an online IDE.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mb-3 p-3 rounded-3 d-flex align-items-start border-start border-4 border-danger bg-light-subtle">
+                            <div class="step-number me-3 fs-4 fw-bold ">5</div>
+                            <div>
+                                <h5 class="fw-semibold  text-danger">Mark as Complete</h5>
+                                <p class="mb-0 text-secondary">Mark the question as complete to track your learning
+                                    progress.</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary px-4 py-2 fw-semibold" onclick="hideInstructions()">Get
+                                Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="loginContainer" style="display: none;" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="text-center mb-4" id="form-title">User Info</h4>
+                        <form onsubmit="toggleFields(); return false;">
+                            <div class="mb-3">
+                                <label for="user-name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="user-name" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="user-mobile" class="form-label">Mobile Number</label>
+                                <input type="tel" class="form-control" id="user-mobile" pattern="[0-9]{10}" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="user-email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="user-email" required />
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="questionsContainer" style="display: none;" class="container mt-5">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto" id="questionsArea"></div>
+        </div>
+    </div>
+
+    <div id="payquestionsContainer" style="display: none;" class="container mt-5">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto" id="payQuestionsArea"></div>
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer class="footer text-white py-3 mb-0 mt-auto bg-dark">
+        <div class="container">
+            <!-- Centered content -->
+            <div class="text-center mb-4">
+                <h5 class="mb-2">CDAVIN</h5>
+                <p class="mb-2">Code | Design | Applications | Virtualization | Innovation</p>
+            </div>
+            <!-- Bottom Copyright -->
+            <!-- <p class="text-center mb-0">
+                &copy; <span id="year"></span> CDAVIN. All rights reserved.
+            </p> -->
+        </div>
+    </footer>
+
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const logo = document.getElementById('cdavinLogo');
+        const meanings = document.getElementById('cdavinMeanings');
+
+        if (logo && meanings) {
+            logo.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                meanings.classList.toggle('d-none');
+                if (!meanings.classList.contains('d-none')) {
+                    meanings.classList.add('animate-fade-in');
+                }
+            });
+        }
+
+        const questions = [
+            "Addition of two numbers",
+            "Subtraction of two numbers",
+            "Multiplication of two numbers",
+            // "Division of two numbers",
+            // "Modulo operation of two numbers",
+        ];
+
+        const payQuestions = [
+            "Calculate hourly wage from salary",
+            "Deduct tax from income",
+            "Calculate bonus based on performance",
+            "Compute net pay after deductions",
+            "Salary breakdown with overtime"
+        ];
+
+        const practiceLinks = {
+            "C": "https://www.programiz.com/c-programming/online-compiler/",
+            "C++": "https://www.programiz.com/cpp-programming/online-compiler/",
+            "Python": "https://www.programiz.com/python-programming/online-compiler/",
+            "Java": "https://www.jdoodle.com/online-java-compiler/",
+            "PHP": "https://www.jdoodle.com/php-online-editor/",
+            "Kotlin": "https://play.kotlinlang.org/",
+            "Go": "https://go.dev/play/"
+        };
+
+        const createCardHTML = (id, question) => `
+            <div class="border rounded p-3 mb-4 shadow-sm" data-question="${id}">
+                <h5 class="mb-2">${id}. ${question}</h5>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                    <button class="btn btn-success btn-md select-btn">Select</button>
+                </div>
+                <div class="language-options d-none">
+                    <div class="d-flex flex-wrap gap-2 p-2">
+                        <button class="btn btn-c lang-btn" data-lang="C">C</button>
+                        <button class="btn btn-cpp lang-btn" data-lang="C++">C++</button>
+                        <button class="btn btn-python lang-btn" data-lang="Python">Python</button>
+                        <button class="btn btn-java lang-btn" data-lang="Java">Java</button>
+                        <button class="btn btn-php lang-btn" data-lang="PHP">PHP</button>
+                        <button class="btn btn-kotlin lang-btn" data-lang="Kotlin">Kotlin</button>
+                        <button class="btn btn-go lang-btn" data-lang="Go">Go</button>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 mb-2">
+                        <button class="btn btn-primary btn-md complete-btn">Complete</button>
+                    </div>
+                </div>
+                <div class="position-relative">
+                    <pre class="answer-box bg-light p-2 rounded mt-2 d-none"></pre>
+                    <a href="#" target="_blank" class="practice-link btn btn-sm mt-2 d-none">Practice ${id} in <span class="lang-name"></span></a>
+                    <button class="copy-btn btn btn-lg btn-outline-secondary position-absolute top-0 end-0 m-2 d-none">Copy</button>
+                </div>
+            </div>`;
+
+        // Function to check if email is privileged
+        async function isPrivilegedUser(email) {
+            try {
+                const response = await fetch('mails.txt');
+                if (response.ok) {
+                    const text = await response.text();
+                    const emails = text.split('\n')
+                        .map(e => e.trim().toLowerCase())
+                        .filter(e => e.length > 0);
+                    return emails.includes(email.toLowerCase());
+                }
+                return false;
+            } catch (error) {
+                console.error('Error checking privileges:', error);
+                return false;
+            }
+        }
+
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", e => {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.key === "u") ||
+                (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key))
+            ) {
+                e.preventDefault();
+            }
+        });
+
+        // Function to hide instructions and show login
+        function hideInstructions() {
+            document.getElementById("instructionsContainer").style.display = "none";
+             window.location.href = "time.html";
+            //  document.getElementById("loginContainer").style.display = "block";
+
+        }
+
+        // Check returning users
+        document.addEventListener("DOMContentLoaded", async () => {
+            // Initialize questions and UI elements
+            const questionsArea = document.getElementById("questionsArea");
+            const payQuestionsArea = document.getElementById("payQuestionsArea");
+
+            // Load all questions
+            questions.forEach((q, i) => {
+                questionsArea.innerHTML += createCardHTML(`Q${i + 1}`, q);
+            });
+
+            payQuestions.forEach((q, i) => {
+                payQuestionsArea.innerHTML += createCardHTML(`P${i + 1}`, q);
+            });
+
+            // Check for returning user
+            const userEmail = localStorage.getItem("userEmail");
+            if (userEmail) {
+                document.getElementById("instructionsContainer").style.display = "none";
+                document.getElementById("loginContainer").style.display = "none";
+                document.getElementById("questionsContainer").style.display = "block";
+
+                // Only show pay questions for privileged users
+                if (await isPrivilegedUser(userEmail)) {
+                    document.getElementById("payquestionsContainer").style.display = "block";
+                } else {
+                    document.getElementById("payquestionsContainer").style.display = "none";
+                }
+            } else {
+                // New user - show instructions first
+                document.getElementById("instructionsContainer").style.display = "block";
+                document.getElementById("loginContainer").style.display = "none";
+            }
+
+            // Initialize remaining functionality
+            markCompletedQuestions();
+            attachDynamicListeners();
+        });
+
+        function markCompletedQuestions() {
+            const email = localStorage.getItem("userEmail");
+            if (!email) return;
+
+            const completed = JSON.parse(localStorage.getItem(`${email}-completed`) || "[]");
+
+            completed.forEach(questionId => {
+                const card = document.querySelector(`[data-question="${questionId}"]`);
+                if (card) {
+                    card.classList.add("border-success", "bg-light");
+                    card.querySelector(".complete-btn").disabled = true;
+                }
+            });
+        }
+
+        function attachDynamicListeners() {
+            document.querySelectorAll(".complete-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    const card = button.closest(".border");
+                    const questionId = card.getAttribute("data-question");
+
+                    card.classList.add("border-success", "bg-light");
+                    button.disabled = true;
+                    alert(`Marked ${questionId} as complete!`);
+
+                    const email = localStorage.getItem("userEmail");
+                    const name = localStorage.getItem("userName");
+                    const mobile = localStorage.getItem("userMobile");
+
+                    if (email && name && mobile) {
+                        // Store in localStorage
+                        let completed = JSON.parse(localStorage.getItem(`${email}-completed`) || "[]");
+                        if (!completed.includes(questionId)) {
+                            completed.push(questionId);
+                            localStorage.setItem(`${email}-completed`, JSON.stringify(completed));
+                        }
+
+                        // Submit to second Google Form
+                        const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeqOseTWG0jXZHAy4I8Fog_vUl6d88IBsLuMiVP0B0eknh8Hw/formResponse";
+                        const formData = new FormData();
+                        formData.append("entry.2105717835", name);         // Name
+                        formData.append("entry.659603261", mobile);        // Mobile
+                        formData.append("entry.274302655", email);         // Email
+                        formData.append("entry.1934908803", questionId);   // Question ID or other data
+
+
+                        fetch(formURL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            body: formData
+                        }).then(() => {
+                            console.log(`Submitted ${questionId} to send Google Form`);
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll(".select-btn").forEach(button => {
+                button.addEventListener("click", () => {
+                    const card = button.closest(".border");
+                    const options = card.querySelector(".language-options");
+                    const answerBox = card.querySelector(".answer-box");
+                    const copyBtn = card.querySelector(".copy-btn");
+                    const practiceLink = card.querySelector(".practice-link");
+
+                    options.classList.toggle("d-none");
+                    answerBox.classList.add("d-none");
+                    answerBox.textContent = "";
+                    copyBtn.classList.add("d-none");
+                    practiceLink.classList.add("d-none");
+                });
+            });
+
+            document.querySelectorAll(".lang-btn").forEach(langBtn => {
+                langBtn.addEventListener("click", async function () {
+                    const language = this.getAttribute("data-lang");
+                    const card = this.closest(".border");
+                    const questionId = card.getAttribute("data-question");
+                    const answerBox = card.querySelector(".answer-box");
+                    const copyBtn = card.querySelector(".copy-btn");
+                    const practiceLink = card.querySelector(".practice-link");
+                    const langNameSpan = practiceLink.querySelector(".lang-name");
+
+                    // Update practice link
+                    if (practiceLinks[language]) {
+                        practiceLink.href = practiceLinks[language];
+                        langNameSpan.textContent = language;
+                        practiceLink.classList.remove("d-none");
+                    } else {
+                        practiceLink.classList.add("d-none");
+                    }
+
+                    try {
+                        const res = await fetch("answer.txt");
+                        const text = await res.text();
+
+                        const questionRegex = new RegExp(`${questionId}:\\s*([\\s\\S]*?)(?=\\n[QP]\\d+:|$)`, "g");
+                        const questionMatch = text.match(questionRegex);
+
+                        if (questionMatch && questionMatch.length > 0) {
+                            const escapedLanguage = language.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                            const langRegex = new RegExp(`"${escapedLanguage}":\\s*([\\s\\S]*?)(?=\\n"[^"]+":|\\n[QP]\\d+:|$)`);
+                            const langMatch = questionMatch[0].match(langRegex);
+
+                            if (langMatch) {
+                                answerBox.textContent = langMatch[1].trim().replace(/\\n/g, "\n");
+                                answerBox.classList.remove("d-none");
+                                copyBtn.classList.remove("d-none");
+                            } else {
+                                answerBox.textContent = "Answer not found for this language.";
+                                answerBox.classList.remove("d-none");
+                                copyBtn.classList.add("d-none");
+                            }
+                        } else {
+                            answerBox.textContent = "Answer Updated Soon.";
+                            answerBox.classList.remove("d-none");
+                            copyBtn.classList.add("d-none");
+                        }
+                    } catch (error) {
+                        answerBox.textContent = "Error fetching answers.";
+                        answerBox.classList.remove("d-none");
+                        copyBtn.classList.add("d-none");
+                    }
+                });
+            });
+
+            document.querySelectorAll(".copy-btn").forEach(copyBtn => {
+                copyBtn.addEventListener("click", () => {
+                    // Get the answer box which is the previous sibling of the copy button's parent
+                    const answerBox = copyBtn.parentElement.querySelector(".answer-box");
+                    navigator.clipboard.writeText(answerBox.textContent).then(() => {
+                        copyBtn.textContent = "Copied!";
+                        setTimeout(() => (copyBtn.textContent = "Copy"), 1000);
+                    });
+                });
+            });
+        }
+
+        async function toggleFields() {
+            const name = document.getElementById("user-name").value;
+            const mobile = document.getElementById("user-mobile").value;
+            const email = document.getElementById("user-email").value;
+
+            console.log("Name:", name);
+            console.log("Mobile:", mobile);
+            console.log("Email:", email);
+
+            // Store in localStorage
+            localStorage.setItem("userName", name);
+            localStorage.setItem("userMobile", mobile);
+            localStorage.setItem("userEmail", email);
+
+            // Submit to Google Form
+            const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdi9SK7xQeAuWCYCmv2SzDQ80aTFZUrQ3Fmo74IQ9MZWrtkgg/formResponse";
+            const formData = new FormData();
+            formData.append("entry.1217600894", name);   // Name
+            formData.append("entry.1854581999", mobile); // Mobile
+            formData.append("entry.847488669", email);   // Email
+
+            fetch(formURL, {
+                method: "POST",
+                mode: "no-cors",
+                body: formData
+            }).then(() => {
+                console.log("Submitted to Google Form!");
+            });
+
+            // Hide login and show regular questions
+            document.getElementById("instructionsContainer").style.display = "none";
+            document.getElementById("loginContainer").style.display = "none";
+            document.getElementById("questionsContainer").style.display = "block";
+
+            // Show pay questions only if email is in mails.txt
+            if (await isPrivilegedUser(email)) {
+                document.getElementById("payquestionsContainer").style.display = "block";
+            } else {
+                document.getElementById("payquestionsContainer").style.display = "none";
+            }
+
+            markCompletedQuestions();
+            return false;
+        }
+        // Make premium button sticky on scroll
+        const premiumBtn = document.querySelector('.sticky-premium');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                premiumBtn.style.opacity = '1';
+                premiumBtn.style.visibility = 'visible';
+            } else {
+                premiumBtn.style.opacity = '0';
+                premiumBtn.style.visibility = 'hidden';
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
