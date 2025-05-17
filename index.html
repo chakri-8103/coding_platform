@@ -29,9 +29,7 @@
         transition: transform 0.2s ease;
     }
 
-    .footer {
-        background-color: #212529;
-    }
+    
 
     /* Language button colors */
     .btn-c {
@@ -262,6 +260,15 @@
                                     progress.</p>
                             </div>
                         </div>
+                        <div
+                            class="mb-3 p-3 rounded-3 d-flex align-items-start border-start border-4 border-secondary bg-light-subtle">
+                            <div class="step-number me-3 fs-4 fw-bold">6</div>
+                            <div>
+                                <h5 class="fw-semibold text-secondary">Premium Access</h5>
+                                <p class="mb-0 text-secondary">Unlock premium features to learn and practice
+                                    advanced-level questions.</p>
+                            </div>
+                        </div>
 
                         <div class="text-center mt-4">
                             <button class="btn btn-primary px-4 py-2 fw-semibold" onclick="hideInstructions()">Get
@@ -316,25 +323,11 @@
     </div>
 
 
-    <!-- Footer Section -->
-    <footer class="footer text-white py-3 mb-0 mt-auto bg-dark">
-        <div class="container">
-            <!-- Centered content -->
-            <div class="text-center mb-4">
-                <h5 class="mb-2">CDAVIN</h5>
-                <p class="mb-2">Code | Design | Applications | Virtualization | Innovation</p>
-            </div>
-            <!-- Bottom Copyright -->
-            <!-- <p class="text-center mb-0">
-                &copy; <span id="year"></span> CDAVIN. All rights reserved.
-            </p> -->
-        </div>
-    </footer>
+   
 
 
     <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+       
 
         const logo = document.getElementById('cdavinLogo');
         const meanings = document.getElementById('cdavinMeanings');
